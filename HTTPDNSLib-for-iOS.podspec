@@ -99,8 +99,8 @@ Pod::Spec.new do |s|
     s.subspec 'QueryManager' do |ss|
     ss.source_files = 'src/DNSCache/QueryManager/**/*.{h,m}'
     end
-    s.subspec 'NetworkManger' do |ss|
-    ss.source_files = 'src/DNSCache/NetworkManger/**/*.{h,m}'
+    s.subspec 'NetworkManager' do |ss|
+    ss.source_files = 'src/DNSCache/NetworkManager/**/*.{h,m}'
     end
     s.subspec 'ConfigManager' do |ss|
     ss.source_files = 'src/DNSCache/ConfigManager/**/*.{h,m}'
