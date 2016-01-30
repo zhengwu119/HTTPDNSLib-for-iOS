@@ -145,7 +145,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-    s.framework  = "libsqlite3.dylib"
+    s.framework  = "libsqlite3"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
