@@ -10,12 +10,12 @@
 		84F9B2D81C5CB09500B88A83 /* WBDNSConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B2D61C5CB09500B88A83 /* WBDNSConfigManager.m */; };
 		84F9B2DF1C5CB13600B88A83 /* WBDNSSpeedTestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B2DC1C5CB13600B88A83 /* WBDNSSpeedTestManager.m */; };
 		84F9B2E01C5CB13600B88A83 /* WBDNSTCPSpeedTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B2DE1C5CB13600B88A83 /* WBDNSTCPSpeedTester.m */; };
-		84F9B2E61C5CB1B200B88A83 /* WBDNSNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B2E31C5CB1B200B88A83 /* WBDNSNetworkManager.m */; };
-		84F9B2E71C5CB1B200B88A83 /* WBDNSReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B2E51C5CB1B200B88A83 /* WBDNSReachability.m */; };
 		84F9B2EA1C5CB20200B88A83 /* WBDNSConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B2E91C5CB20200B88A83 /* WBDNSConfig.m */; };
-		84F9B2F01C5CB8D900B88A83 /* WBDNSCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B2ED1C5CB8D900B88A83 /* WBDNSCacheManager.m */; };
-		84F9B2F11C5CB8D900B88A83 /* WBDNSDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B2EF1C5CB8D900B88A83 /* WBDNSDBManager.m */; };
 		84F9B2F51C5CB8FB00B88A83 /* WBDNSHttpDnsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B2F41C5CB8FB00B88A83 /* WBDNSHttpDnsManager.m */; };
+		84F9B3081C5CBD3A00B88A83 /* WBDNSCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B3051C5CBD3A00B88A83 /* WBDNSCacheManager.m */; };
+		84F9B3091C5CBD3A00B88A83 /* WBDNSDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B3071C5CBD3A00B88A83 /* WBDNSDBManager.m */; };
+		84F9B3131C5CBD6A00B88A83 /* WBDNSNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B3101C5CBD6A00B88A83 /* WBDNSNetworkManager.m */; };
+		84F9B3141C5CBD6A00B88A83 /* WBDNSReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B3121C5CBD6A00B88A83 /* WBDNSReachability.m */; };
 		9A34ECB21B687F6700AC4526 /* WBDNSCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A34ECB11B687F6700AC4526 /* WBDNSCache.m */; };
 		9AAF51081B6F78440073954E /* WBDNSTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AAF51071B6F78440073954E /* WBDNSTools.m */; };
 		9AD775641B70ABD400904927 /* WBDNSDomainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD7755C1B70ABD400904927 /* WBDNSDomainModel.m */; };
@@ -51,18 +51,18 @@
 		84F9B2DC1C5CB13600B88A83 /* WBDNSSpeedTestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDNSSpeedTestManager.m; sourceTree = "<group>"; };
 		84F9B2DD1C5CB13600B88A83 /* WBDNSTCPSpeedTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBDNSTCPSpeedTester.h; sourceTree = "<group>"; };
 		84F9B2DE1C5CB13600B88A83 /* WBDNSTCPSpeedTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDNSTCPSpeedTester.m; sourceTree = "<group>"; };
-		84F9B2E21C5CB1B200B88A83 /* WBDNSNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBDNSNetworkManager.h; sourceTree = "<group>"; };
-		84F9B2E31C5CB1B200B88A83 /* WBDNSNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDNSNetworkManager.m; sourceTree = "<group>"; };
-		84F9B2E41C5CB1B200B88A83 /* WBDNSReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBDNSReachability.h; sourceTree = "<group>"; };
-		84F9B2E51C5CB1B200B88A83 /* WBDNSReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDNSReachability.m; sourceTree = "<group>"; };
 		84F9B2E81C5CB20200B88A83 /* WBDNSConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBDNSConfig.h; sourceTree = "<group>"; };
 		84F9B2E91C5CB20200B88A83 /* WBDNSConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDNSConfig.m; sourceTree = "<group>"; };
-		84F9B2EC1C5CB8D900B88A83 /* WBDNSCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBDNSCacheManager.h; sourceTree = "<group>"; };
-		84F9B2ED1C5CB8D900B88A83 /* WBDNSCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDNSCacheManager.m; sourceTree = "<group>"; };
-		84F9B2EE1C5CB8D900B88A83 /* WBDNSDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBDNSDBManager.h; sourceTree = "<group>"; };
-		84F9B2EF1C5CB8D900B88A83 /* WBDNSDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDNSDBManager.m; sourceTree = "<group>"; };
 		84F9B2F31C5CB8FB00B88A83 /* WBDNSHttpDnsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBDNSHttpDnsManager.h; sourceTree = "<group>"; };
 		84F9B2F41C5CB8FB00B88A83 /* WBDNSHttpDnsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDNSHttpDnsManager.m; sourceTree = "<group>"; };
+		84F9B3041C5CBD3A00B88A83 /* WBDNSCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBDNSCacheManager.h; sourceTree = "<group>"; };
+		84F9B3051C5CBD3A00B88A83 /* WBDNSCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDNSCacheManager.m; sourceTree = "<group>"; };
+		84F9B3061C5CBD3A00B88A83 /* WBDNSDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBDNSDBManager.h; sourceTree = "<group>"; };
+		84F9B3071C5CBD3A00B88A83 /* WBDNSDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDNSDBManager.m; sourceTree = "<group>"; };
+		84F9B30F1C5CBD6A00B88A83 /* WBDNSNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBDNSNetworkManager.h; sourceTree = "<group>"; };
+		84F9B3101C5CBD6A00B88A83 /* WBDNSNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDNSNetworkManager.m; sourceTree = "<group>"; };
+		84F9B3111C5CBD6A00B88A83 /* WBDNSReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBDNSReachability.h; sourceTree = "<group>"; };
+		84F9B3121C5CBD6A00B88A83 /* WBDNSReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDNSReachability.m; sourceTree = "<group>"; };
 		9A34EC6E1B686BF200AC4526 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		9A34ECB01B687F6700AC4526 /* WBDNSCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBDNSCache.h; sourceTree = "<group>"; };
 		9A34ECB11B687F6700AC4526 /* WBDNSCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDNSCache.m; sourceTree = "<group>"; };
@@ -128,28 +128,6 @@
 			path = SpeedTestManager;
 			sourceTree = "<group>";
 		};
-		84F9B2E11C5CB1B200B88A83 /* NetworkManger */ = {
-			isa = PBXGroup;
-			children = (
-				84F9B2E21C5CB1B200B88A83 /* WBDNSNetworkManager.h */,
-				84F9B2E31C5CB1B200B88A83 /* WBDNSNetworkManager.m */,
-				84F9B2E41C5CB1B200B88A83 /* WBDNSReachability.h */,
-				84F9B2E51C5CB1B200B88A83 /* WBDNSReachability.m */,
-			);
-			path = NetworkManger;
-			sourceTree = "<group>";
-		};
-		84F9B2EB1C5CB8D900B88A83 /* CacheManger */ = {
-			isa = PBXGroup;
-			children = (
-				84F9B2EC1C5CB8D900B88A83 /* WBDNSCacheManager.h */,
-				84F9B2ED1C5CB8D900B88A83 /* WBDNSCacheManager.m */,
-				84F9B2EE1C5CB8D900B88A83 /* WBDNSDBManager.h */,
-				84F9B2EF1C5CB8D900B88A83 /* WBDNSDBManager.m */,
-			);
-			path = CacheManger;
-			sourceTree = "<group>";
-		};
 		84F9B2F21C5CB8FB00B88A83 /* HttpDnsManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +135,28 @@
 				84F9B2F41C5CB8FB00B88A83 /* WBDNSHttpDnsManager.m */,
 			);
 			path = HttpDnsManager;
+			sourceTree = "<group>";
+		};
+		84F9B3031C5CBD3A00B88A83 /* CacheManager */ = {
+			isa = PBXGroup;
+			children = (
+				84F9B3041C5CBD3A00B88A83 /* WBDNSCacheManager.h */,
+				84F9B3051C5CBD3A00B88A83 /* WBDNSCacheManager.m */,
+				84F9B3061C5CBD3A00B88A83 /* WBDNSDBManager.h */,
+				84F9B3071C5CBD3A00B88A83 /* WBDNSDBManager.m */,
+			);
+			path = CacheManager;
+			sourceTree = "<group>";
+		};
+		84F9B30E1C5CBD6A00B88A83 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				84F9B30F1C5CBD6A00B88A83 /* WBDNSNetworkManager.h */,
+				84F9B3101C5CBD6A00B88A83 /* WBDNSNetworkManager.m */,
+				84F9B3111C5CBD6A00B88A83 /* WBDNSReachability.h */,
+				84F9B3121C5CBD6A00B88A83 /* WBDNSReachability.m */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 		9A34ECB31B68C75900AC4526 /* Tools */ = {
@@ -212,10 +212,10 @@
 				9AE0E6331B8AEEE500018625 /* SortManager */,
 				9AD7755A1B70AB7500904927 /* QueryManager */,
 				84F9B2F21C5CB8FB00B88A83 /* HttpDnsManager */,
-				84F9B2EB1C5CB8D900B88A83 /* CacheManger */,
-				84F9B2E11C5CB1B200B88A83 /* NetworkManger */,
 				84F9B2D21C5CB09500B88A83 /* ConfigManager */,
 				84F9B2D91C5CB13600B88A83 /* SpeedTestManager */,
+				84F9B3031C5CBD3A00B88A83 /* CacheManager */,
+				84F9B30E1C5CBD6A00B88A83 /* NetworkManager */,
 				9A34ECB31B68C75900AC4526 /* Tools */,
 				9AA3898D1B678AD30054EE87 /* Models */,
 				9A34ECB01B687F6700AC4526 /* WBDNSCache.h */,
@@ -326,21 +326,21 @@
 				9A34ECB21B687F6700AC4526 /* WBDNSCache.m in Sources */,
 				9AE96CE81B78857000AF20F9 /* WBDNSMemeryCache.m in Sources */,
 				9AE0E6361B8AEEF300018625 /* WBDNSSortManager.m in Sources */,
+				84F9B3131C5CBD6A00B88A83 /* WBDNSNetworkManager.m in Sources */,
 				9AD775671B70ABD400904927 /* WBDNSIpModel.m in Sources */,
 				9AD7756A1B70AC8300904927 /* WBDNSQueryManager.m in Sources */,
-				84F9B2F11C5CB8D900B88A83 /* WBDNSDBManager.m in Sources */,
-				84F9B2E71C5CB1B200B88A83 /* WBDNSReachability.m in Sources */,
 				9AD9C06F1B8EEF8E0027EFD5 /* WBDNSLogFile.m in Sources */,
+				84F9B3141C5CBD6A00B88A83 /* WBDNSReachability.m in Sources */,
 				9AD775641B70ABD400904927 /* WBDNSDomainModel.m in Sources */,
+				84F9B3081C5CBD3A00B88A83 /* WBDNSCacheManager.m in Sources */,
 				9AD9C06C1B8EE1BE0027EFD5 /* WBDNSLogger.m in Sources */,
 				9AAF51081B6F78440073954E /* WBDNSTools.m in Sources */,
+				84F9B3091C5CBD3A00B88A83 /* WBDNSDBManager.m in Sources */,
 				9AF42C311B7460560073EA07 /* WBDNSIP.m in Sources */,
 				84F9B2D81C5CB09500B88A83 /* WBDNSConfigManager.m in Sources */,
 				9AD9C0691B8EE15B0027EFD5 /* WBDNSLogManager.m in Sources */,
 				84F9B2E01C5CB13600B88A83 /* WBDNSTCPSpeedTester.m in Sources */,
 				84F9B2EA1C5CB20200B88A83 /* WBDNSConfig.m in Sources */,
-				84F9B2E61C5CB1B200B88A83 /* WBDNSNetworkManager.m in Sources */,
-				84F9B2F01C5CB8D900B88A83 /* WBDNSCacheManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
