@@ -89,7 +89,37 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "src/", "src/DNSCache/**/*.{h,m}"
+    s.source_files  = "src/", "src/DNSCache/*.{h,m}"
+    s.subspec 'LogManager' do |ss|
+    ss.source_files = 'src/DNSCache/LogManager/**/*.{h,m}'
+    end
+    s.subspec 'SortManager' do |ss|
+    ss.source_files = 'src/DNSCache/SortManager/**/*.{h,m}'
+    end
+    s.subspec 'QueryManager' do |ss|
+    ss.source_files = 'src/DNSCache/QueryManager/**/*.{h,m}'
+    end
+    s.subspec 'NetworkManger' do |ss|
+    ss.source_files = 'src/DNSCache/NetworkManger/**/*.{h,m}'
+    end
+    s.subspec 'ConfigManager' do |ss|
+    ss.source_files = 'src/DNSCache/ConfigManager/**/*.{h,m}'
+    end
+    s.subspec 'SpeedTestManager' do |ss|
+    ss.source_files = 'src/DNSCache/SpeedTestManager/**/*.{h,m}'
+    end
+    s.subspec 'HttpDnsManager' do |ss|
+    ss.source_files = 'src/DNSCache/HttpDnsManager/**/*.{h,m}'
+    end
+    s.subspec 'CacheManager' do |ss|
+    ss.source_files = 'src/DNSCache/CacheManager/**/*.{h,m}'
+    end
+    s.subspec 'Tools' do |ss|
+    ss.source_files = 'src/DNSCache/Tools/**/*.{h,m}'
+    end
+    s.subspec 'Models' do |ss|
+    ss.source_files = 'src/DNSCache/Models/**/*.{h,m}'
+    end
   #  s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -115,7 +145,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  # s.framework  = "SomeFramework"
+    s.framework  = "libsqlite3.dylib"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
