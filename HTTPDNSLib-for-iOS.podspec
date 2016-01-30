@@ -112,7 +112,7 @@ Pod::Spec.new do |s|
     ss.source_files = 'src/DNSCache/HttpDnsManager/**/*.{h,m}'
     end
     s.subspec 'CacheManager' do |ss|
-    ss.frameworks = 'libsqlite3'
+    ss.frameworks = 'libsqlite3.dylib'
     ss.source_files = 'src/DNSCache/CacheManager/**/*.{h,m}'
     end
     s.subspec 'Tools' do |ss|
