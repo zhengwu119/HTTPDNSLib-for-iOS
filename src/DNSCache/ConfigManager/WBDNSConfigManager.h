@@ -28,14 +28,8 @@
  */
 + (WBDNSConfig *)sharedConfig;
 
-/**
- *  设置使用DNSCache SDK的app 的唯一标识符和版本号，用于请求对应的参数配置文件。
- *  App应在Sina http dns server网站配置此标识符合版本对应的参数配置列表。
- *
- *  @param appKey  App申请的唯一标识符
- *  @param version App的版本号。
- */
-+ (void)setAppkey:(NSString *)appKey version:(NSString *)version;
+
++ (void)setAppID:(NSString *)appID Appkey:(NSString *)appKey;
 
 /**
  *  设置配置下发服务器的网址。
@@ -61,18 +55,18 @@
 - (BOOL)isSupportedDomain:(NSString *)domain;
 
 /**
- *  获取设置的App key.
+ *  获取设置的App ID.
  *
- *  @return App key
+ *  @return App ID
  */
-+ (NSString *)getAppkey;
++ (NSString *)getAppID;
 
 /**
- *  获取设置的App version。
+ *  获取设置的App KEY。
  *
- *  @return App Version
+ *  @return App KEY
  */
-+ (NSString *)getAppVersion;
++ (NSString *)getAppKey;
 
 /**
  *  获取推荐的服务器Url

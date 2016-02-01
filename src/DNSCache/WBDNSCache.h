@@ -71,13 +71,8 @@
  */
 - (void)initialize;
 
-/**
- *  设置应用程序在SinaDNS 服务器注册的app标识符和版本号。请在初始化函数调用前设置。
- *
- *  @param appKey  在新浪DNS服务器注册的 app标识符
- *  @param version 在新浪DNS服务器注册的 app版本号。
- */
-+ (void)setAppkey:(NSString *)appKey version:(NSString *)version;
+
++ (void)setAppID:(NSString *)appID Appkey:(NSString *)appKey;
 
 
 /**

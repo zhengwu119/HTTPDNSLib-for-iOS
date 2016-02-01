@@ -11,21 +11,23 @@
 #import "WBDNSConfig.h"
 #import "WBDNSConfigManager.h"
 #import "WBDNSLogManager.h"
-
+#import "WBDNSEncrypt.h"
 @implementation WBDNSHttpDnsManager
 
 - (void)requestHttpDnsByDomain:(NSString *)domain completionHandler:(void(^)(WBDNSHttpDnsPack *))completionHandler {
     NSString* urlPrefix = [[WBDNSConfigManager sharedInstance] getServerUrl];
+    NSString* appID = [WBDNSConfigManager getAppID];
+    NSString* domainEncrypt=[WBDNSEncrypt encrypt:domain];
     if (urlPrefix == nil) {
         NSLog(@"ERROR:%s:%d urlPrefix is nil.", __FUNCTION__, __LINE__);
         return;
     }
     NSURL *url;
     if ([urlPrefix hasPrefix:@"http://"]||[urlPrefix hasPrefix:@"https://"]) {
-        url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/dns?domain=%@", urlPrefix, domain]];
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/d?ttl=1&dn=%@&id=%@", urlPrefix, domainEncrypt, appID]];
     }
     else {
-        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/dns?domain=%@",  urlPrefix, domain]];
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/d?ttl=1&dn=%@&id=%@", urlPrefix, domainEncrypt, appID]];
     }
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration ephemeralSessionConfiguration];
@@ -34,10 +36,10 @@
     session.sessionDescription = urlPrefix;
     NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (!error) {
-            //NSString* str = [[NSString alloc] initWithData:data  encoding:NSUTF8StringEncoding];
-            NSDictionary* jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-            if (jsonDic) {
-                WBDNSHttpDnsPack* dnsPack = [WBDNSHttpDnsPack generateInstanceFromDic:jsonDic];
+            NSString* responseString = [WBDNSEncrypt decrypt:data];
+//            NSDictionary* jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            if (responseString) {
+                WBDNSHttpDnsPack* dnsPack = [WBDNSHttpDnsPack generateInstanceFromresponseString:responseString andDomain:domain];
                 dnsPack.localhostSp = [WBDNSNetworkManager sharedInstance].currentSpTypeString;
                 
                 [WBDNSLogManager log:WBDNS_LOG_TYPE_INFO action:WBDNS_LOG_ACTION_INFO_PACK body:[dnsPack toDictionary] samplingRate:[WBDNSConfigManager sharedInstance].config.logSamplingRate];

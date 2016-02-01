@@ -48,7 +48,7 @@
  */
 @property (nonatomic, strong) NSString *localhostSp;
 
-+ (WBDNSHttpDnsPack *)generateInstanceFromDic:(NSDictionary *)dic;
++ (WBDNSHttpDnsPack *)generateInstanceFromresponseString:(NSString *)responseString andDomain:(NSString *)domain;
 
 - (NSDictionary *)toDictionary;
 

@@ -16,6 +16,7 @@
 		84F9B3091C5CBD3A00B88A83 /* WBDNSDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B3071C5CBD3A00B88A83 /* WBDNSDBManager.m */; };
 		84F9B3131C5CBD6A00B88A83 /* WBDNSNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B3101C5CBD6A00B88A83 /* WBDNSNetworkManager.m */; };
 		84F9B3141C5CBD6A00B88A83 /* WBDNSReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B3121C5CBD6A00B88A83 /* WBDNSReachability.m */; };
+		84F9B36B1C5F0A2A00B88A83 /* WBDNSEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9B36A1C5F0A2A00B88A83 /* WBDNSEncrypt.m */; };
 		9A34ECB21B687F6700AC4526 /* WBDNSCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A34ECB11B687F6700AC4526 /* WBDNSCache.m */; };
 		9AAF51081B6F78440073954E /* WBDNSTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AAF51071B6F78440073954E /* WBDNSTools.m */; };
 		9AD775641B70ABD400904927 /* WBDNSDomainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD7755C1B70ABD400904927 /* WBDNSDomainModel.m */; };
@@ -63,6 +64,8 @@
 		84F9B3101C5CBD6A00B88A83 /* WBDNSNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDNSNetworkManager.m; sourceTree = "<group>"; };
 		84F9B3111C5CBD6A00B88A83 /* WBDNSReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBDNSReachability.h; sourceTree = "<group>"; };
 		84F9B3121C5CBD6A00B88A83 /* WBDNSReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDNSReachability.m; sourceTree = "<group>"; };
+		84F9B3691C5F0A2A00B88A83 /* WBDNSEncrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBDNSEncrypt.h; sourceTree = "<group>"; };
+		84F9B36A1C5F0A2A00B88A83 /* WBDNSEncrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDNSEncrypt.m; sourceTree = "<group>"; };
 		9A34EC6E1B686BF200AC4526 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		9A34ECB01B687F6700AC4526 /* WBDNSCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBDNSCache.h; sourceTree = "<group>"; };
 		9A34ECB11B687F6700AC4526 /* WBDNSCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBDNSCache.m; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 			children = (
 				84F9B2F31C5CB8FB00B88A83 /* WBDNSHttpDnsManager.h */,
 				84F9B2F41C5CB8FB00B88A83 /* WBDNSHttpDnsManager.m */,
+				84F9B3691C5F0A2A00B88A83 /* WBDNSEncrypt.h */,
+				84F9B36A1C5F0A2A00B88A83 /* WBDNSEncrypt.m */,
 			);
 			path = HttpDnsManager;
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AF5B0FF1B81A5F4006BB9B6 /* WBDNSWeakTimer.m in Sources */,
+				84F9B36B1C5F0A2A00B88A83 /* WBDNSEncrypt.m in Sources */,
 				84F9B2DF1C5CB13600B88A83 /* WBDNSSpeedTestManager.m in Sources */,
 				84F9B2F51C5CB8FB00B88A83 /* WBDNSHttpDnsManager.m in Sources */,
 				9AF42C301B7460560073EA07 /* WBDNSHttpDnsPack.m in Sources */,

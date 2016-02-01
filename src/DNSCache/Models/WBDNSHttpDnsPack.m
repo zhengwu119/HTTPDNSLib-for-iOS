@@ -9,6 +9,9 @@
 #import "WBDNSHttpDnsPack.h"
 #import "WBDNSModel.h"
 #import "WBDNSCache.h"
+#import "WBDNSNetworkManager.h"
+#import <ifaddrs.h>
+#import <arpa/inet.h>
 @implementation WBDNSHttpDnsPack
 
 - (instancetype)init {
@@ -17,25 +20,36 @@
     return self;
 }
 
-+ (WBDNSHttpDnsPack *)generateInstanceFromDic:(NSDictionary *)dic {
-    if (dic == nil) {
++ (WBDNSHttpDnsPack *)generateInstanceFromresponseString:(NSString *)responseString andDomain:(NSString *)domain{
+    if (responseString == nil) {
         return nil;
     }
     WBDNSHttpDnsPack* dnsPack = [[WBDNSHttpDnsPack alloc]init];
-    dnsPack.domain = dic[@"domain"];
-    dnsPack.device_ip = dic[@"device_ip"];
-    dnsPack.device_sp = dic[@"device_sp"];
-    NSArray* dns = dic[@"dns"];
-    if (dns && [dns isKindOfClass:[NSArray class]]) {
-        dnsPack.dns = [NSMutableArray array];
+    dnsPack.domain = domain;
+    dnsPack.device_ip = [dnsPack getIPAddress];
+    dnsPack.device_sp = [WBDNSNetworkManager sharedInstance].currentSpTypeString;
+    
+    
+    
+    NSArray *array = [responseString componentsSeparatedByString:@","];
+   
+    if (array.count == 2) {
+        NSString *ipStrings = [array firstObject];
+        NSString *ttl = [array lastObject];
+        NSArray* dns = [ipStrings componentsSeparatedByString:@";"];
+        if (dns && [dns isKindOfClass:[NSArray class]]) {
+            dnsPack.dns = [NSMutableArray array];
+        }
+        for (NSString * tempIP in dns) {
+            WBDNSIP* ip = [[WBDNSIP alloc]init];
+            ip.ip = tempIP;
+            ip.ttl = ttl;
+            ip.priority = @"";
+            [dnsPack.dns addObject:ip];
+        }
     }
-    for (NSDictionary* tempIP in dns) {
-        WBDNSIP* ip = [[WBDNSIP alloc]init];
-        ip.ip = tempIP[@"ip"];
-        ip.ttl = tempIP[@"ttl"];
-        ip.priority = tempIP[@"priority"];
-        [dnsPack.dns addObject:ip];
-    }
+
+
     return dnsPack;
 }
 
@@ -58,5 +72,29 @@
                           };
     return dic;
 }
-
+- (NSString *)getIPAddress {
+    NSString *address = @"error";
+    struct ifaddrs *interfaces = NULL;
+    struct ifaddrs *temp_addr = NULL;
+    int success = 0;
+    // retrieve the current interfaces - returns 0 on success
+    success = getifaddrs(&interfaces);
+    if (success == 0) {
+        // Loop through linked list of interfaces
+        temp_addr = interfaces;
+        while(temp_addr != NULL) {
+            if(temp_addr->ifa_addr->sa_family == AF_INET) {
+                // Check if interface is en0 which is the wifi connection on the iPhone
+                if([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"]) {
+                    // Get NSString from C String
+                    address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
+                }
+            }
+            temp_addr = temp_addr->ifa_next;
+        }
+    }
+    // Free memory
+    freeifaddrs(interfaces);
+    return address;
+}
 @end

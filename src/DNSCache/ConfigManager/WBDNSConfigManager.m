@@ -24,8 +24,8 @@
 
 static NSString* WBDNSCacheConfigServerUrl = @"";
 static NSString* WBDNSCacheLogServerUrl = @"";
-static NSString* WBDNS_APPKEY = @"";
-static NSString* WBDNS_APP_VERSION = @"";
+static NSString* WBDNS_APP_ID = @"";
+static NSString* WBDNS_APP_KEY = @"";
 
 + (WBDNSConfigManager *)sharedInstance {
     static WBDNSConfigManager* sharedInstance;
@@ -63,9 +63,9 @@ static NSString* WBDNS_APP_VERSION = @"";
         _isRequestingConfigDataFromServer = NO;
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(networkStatusChanged:) name:(WBDNSNetworkStatusChangeNotification) object:nil];
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self requestingConfigDataFromServer];
-        });
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self requestingConfigDataFromServer];
+//        });
     }
     
     return self;
@@ -130,7 +130,7 @@ static NSString* WBDNS_APP_VERSION = @"";
 }
 
 - (void)requestingConfigDataFromServer {
-    if (WBDNS_APP_VERSION.length == 0 || WBDNS_APPKEY.length == 0) {
+    if (WBDNS_APP_ID.length == 0 || WBDNS_APP_KEY.length == 0) {
         NSLog(@"ERROR:%s:%d WBDNS_APP_VERSION or WBDNS_APPKEY is not set.", __FUNCTION__, __LINE__);
         return;
     }
@@ -141,7 +141,7 @@ static NSString* WBDNS_APP_VERSION = @"";
     _isRequestingConfigDataFromServer = YES;
     NSString *identifierForVendor = [[UIDevice currentDevice].identifierForVendor UUIDString];
     NSString *secureCode = [WBDNSTools md5:[NSString stringWithFormat:@"%@%@",identifierForVendor,@"iheRFsFhLE9h9TRHVRLLBD6eS9ccQdLe"]];
-    NSString* urlString = [NSString stringWithFormat:@"%@?k=%@&v=%@&c=httpdns&did=%@&s=%@",WBDNSCacheConfigServerUrl, WBDNS_APPKEY, WBDNS_APP_VERSION,identifierForVendor, [secureCode lowercaseString]];
+    NSString* urlString = [NSString stringWithFormat:@"%@?k=%@&v=%@&c=httpdns&did=%@&s=%@",WBDNSCacheConfigServerUrl, WBDNS_APP_ID, WBDNS_APP_KEY,identifierForVendor, [secureCode lowercaseString]];
     NSURL* url = [NSURL URLWithString:urlString];
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"GET"];
@@ -174,17 +174,17 @@ static NSString* WBDNS_APP_VERSION = @"";
     [session finishTasksAndInvalidate];
 }
 
-+ (void)setAppkey:(NSString *)appKey version:(NSString *)version {
-    WBDNS_APPKEY = appKey;
-    WBDNS_APP_VERSION = version;
++ (void)setAppID:(NSString *)appID Appkey:(NSString *)appKey {
+    WBDNS_APP_KEY = appKey;
+    WBDNS_APP_ID = appID;
 }
 
 + (NSString *)getAppkey {
-    return WBDNS_APPKEY;
+    return WBDNS_APP_KEY;
 }
 
-+ (NSString *)getAppVersion {
-    return WBDNS_APP_VERSION;
++ (NSString *)getAppID {
+    return WBDNS_APP_ID;
 }
 
 + (void)setConfigServerUrl:(NSString *)url {

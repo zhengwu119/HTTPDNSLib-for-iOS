@@ -21,18 +21,9 @@
         self.enableSDKUpdateServerIpOrder = YES;
         self.speedTestFactorWeight = 50;
         self.serverSuggestionFactorWeight = 50;
-        self.supportedDomainList = @[
-                                     @"ww1.sinaimg.cn",
-                                     @"ww2.sinaimg.cn",
-                                     @"ww3.sinaimg.cn",
-                                     @"ww4.sinaimg.cn",
-                                     @"api.weibo.cn"
-                                     ];
+        self.supportedDomainList = [NSArray array];
         self.httpDnsServerUrlList = @[
-                                      @"http://dns.weibo.cn",
-                                      @"http://202.108.7.232",
-                                      @"http://221.179.190.246",
-                                      @"http://58.63.236.228"
+                                      @"http://119.29.29.29",
                                       ];
     }
     return self;

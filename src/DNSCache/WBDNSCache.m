@@ -116,8 +116,8 @@ static NSString* WBDNSLastUploadLogTime = @"WBDNSLastUploadLogTime";
 }
 
 
-+ (void)setAppkey:(NSString *)appKey version:(NSString *)version {
-    [WBDNSConfigManager setAppkey:appKey version:version];
++ (void)setAppID:(NSString *)appID Appkey:(NSString *)appKey{
+    [WBDNSConfigManager setAppID:appID Appkey:appKey];
 }
 
 + (void)setConfigServerUrl:(NSString *) url {
@@ -207,7 +207,7 @@ static NSString* WBDNSLastUploadLogTime = @"WBDNSLastUploadLogTime";
     
     [self testSpeed];
     
-    [self uploadLogs];
+//    [self uploadLogs];
 }
 
 - (void)checkUpdate:(NSString *)domain needSpeedTest:(BOOL)needSpeedTest {

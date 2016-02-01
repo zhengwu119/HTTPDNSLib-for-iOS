@@ -59,9 +59,9 @@
     NSDictionary* dic = @{@"type":@(type),
                           @"action":action,
                           @"content":body,
-                          @"versionName":[WBDNSConfigManager getAppVersion],
+                          @"appKey":[WBDNSConfigManager getAppKey],
                           @"did":@"iOSCan'tGetDid",
-                          @"appkey":[WBDNSConfigManager getAppkey],
+                          @"appID":[WBDNSConfigManager getAppID],
                           @"timestamp":[[WBDNSTools sharedInstance] stringFromDate:[NSDate date]]
                           };
     NSData * jsonData = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
