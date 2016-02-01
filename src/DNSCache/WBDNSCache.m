@@ -117,7 +117,7 @@ static NSString* WBDNSLastUploadLogTime = @"WBDNSLastUploadLogTime";
 
 
 + (void)setDPlusID:(NSString *)DPlusID DPlusKey:(NSString *)DPlusKey{
-    [WBDNSConfigManager setDPlusID:DPlusID DPlusKey:DPlusID];
+    [WBDNSConfigManager setDPlusID:DPlusID DPlusKey:DPlusKey];
 }
 
 + (void)setConfigServerUrl:(NSString *) url {
