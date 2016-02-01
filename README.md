@@ -7,6 +7,10 @@ DNSCache库使用说明书
 主要更换HTTPDNS服务为DNSPOD企业版~。去掉自动上传LOG,和Config下载。
 保留原有的Cache,DB,ip择优等核心业务。
 
+相关机制链接:
+
+http://www.360doc.com/content/15/1016/07/2909773_505968464.shtml
+
 安装:
 
 pod 'HTTPDNSLib-for-iOS', :git => 'https://github.com/lovewillover/HTTPDNSLib-for-iOS.git'
