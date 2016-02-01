@@ -7,18 +7,21 @@ DNSCache库使用说明书
 主要更换HTTPDNS服务为DNSPOD企业版~。去掉自动上传LOG,和Config下载。
 保留原有的Cache,DB,ip择优等核心业务。
 
+安装:
+
+pod 'HTTPDNSLib-for-iOS', :git => 'https://github.com/lovewillover/HTTPDNSLib-for-iOS.git'
 
 在AppDelegate里（也就是尽可能早的时候）初始化 WBDNSCache库。
 
-[WBDNSCache setAppID:@"DNSPOD_ID" version:@"DNSPOD_KEY"];
+[WBDNSCache setAppID:@"DNSPOD_ID" appkey:@"DNSPOD_KEY"];
 
 初始化库，期间会从参数服务器请求配置参数
 [[WBDNSCache sharedInstance] initialize];
 
-5.建议初始化后延时调用 预请求域名对应IP，提前从服务器拉取域名对应IP
+建议初始化后延时调用 预请求域名对应IP，提前从服务器拉取域名对应IP
 [[WBDNSCache sharedInstance]preloadDomains:@[@"http://www.baidu.com", @"http://api.weibo.cn/"]];
 
-6.然后就可以在任何地方调用
+然后就可以在任何地方调用
 [[WBDNSCache sharedInstance] getDomainServerIpFromURL:url]
 获取转换后Url 和 需要设置的host值。
 这个函数拿到的是一个WBDNSDomainInfo 对象数组，一般来说 取第一个就可以了。
