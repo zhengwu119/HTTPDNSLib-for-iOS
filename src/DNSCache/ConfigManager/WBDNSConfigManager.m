@@ -24,8 +24,10 @@
 
 static NSString* WBDNSCacheConfigServerUrl = @"";
 static NSString* WBDNSCacheLogServerUrl = @"";
-static NSString* WBDNS_APP_ID = @"";
-static NSString* WBDNS_APP_KEY = @"";
+static NSString* WBDNS_DPlus_ID = @"";
+static NSString* WBDNS_DPlus_KEY = @"";
+
+
 
 + (WBDNSConfigManager *)sharedInstance {
     static WBDNSConfigManager* sharedInstance;
@@ -130,7 +132,7 @@ static NSString* WBDNS_APP_KEY = @"";
 }
 
 - (void)requestingConfigDataFromServer {
-    if (WBDNS_APP_ID.length == 0 || WBDNS_APP_KEY.length == 0) {
+    if (WBDNS_DPlus_ID.length == 0 || WBDNS_DPlus_KEY.length == 0) {
         NSLog(@"ERROR:%s:%d WBDNS_APP_VERSION or WBDNS_APPKEY is not set.", __FUNCTION__, __LINE__);
         return;
     }
@@ -141,7 +143,7 @@ static NSString* WBDNS_APP_KEY = @"";
     _isRequestingConfigDataFromServer = YES;
     NSString *identifierForVendor = [[UIDevice currentDevice].identifierForVendor UUIDString];
     NSString *secureCode = [WBDNSTools md5:[NSString stringWithFormat:@"%@%@",identifierForVendor,@"iheRFsFhLE9h9TRHVRLLBD6eS9ccQdLe"]];
-    NSString* urlString = [NSString stringWithFormat:@"%@?k=%@&v=%@&c=httpdns&did=%@&s=%@",WBDNSCacheConfigServerUrl, WBDNS_APP_ID, WBDNS_APP_KEY,identifierForVendor, [secureCode lowercaseString]];
+    NSString* urlString = [NSString stringWithFormat:@"%@?k=%@&v=%@&c=httpdns&did=%@&s=%@",WBDNSCacheConfigServerUrl, WBDNS_DPlus_ID, WBDNS_DPlus_KEY,identifierForVendor, [secureCode lowercaseString]];
     NSURL* url = [NSURL URLWithString:urlString];
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"GET"];
@@ -174,17 +176,17 @@ static NSString* WBDNS_APP_KEY = @"";
     [session finishTasksAndInvalidate];
 }
 
-+ (void)setAppID:(NSString *)appID Appkey:(NSString *)appKey {
-    WBDNS_APP_KEY = appKey;
-    WBDNS_APP_ID = appID;
++ (void)setDPlusID:(NSString *)DPlusID DPlusKey:(NSString *)DPlusKey {
+    WBDNS_DPlus_KEY = DPlusKey;
+    WBDNS_DPlus_ID = DPlusID;
 }
 
-+ (NSString *)getAppkey {
-    return WBDNS_APP_KEY;
++ (NSString *)getDPlusKey{
+    return WBDNS_DPlus_KEY;
 }
 
-+ (NSString *)getAppID {
-    return WBDNS_APP_ID;
++ (NSString *)getDPlusID {
+    return WBDNS_DPlus_ID;
 }
 
 + (void)setConfigServerUrl:(NSString *)url {

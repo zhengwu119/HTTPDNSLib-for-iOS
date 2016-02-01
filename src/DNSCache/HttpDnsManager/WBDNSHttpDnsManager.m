@@ -16,7 +16,7 @@
 
 - (void)requestHttpDnsByDomain:(NSString *)domain completionHandler:(void(^)(WBDNSHttpDnsPack *))completionHandler {
     NSString* urlPrefix = [[WBDNSConfigManager sharedInstance] getServerUrl];
-    NSString* appID = [WBDNSConfigManager getAppID];
+    NSString* appID = [WBDNSConfigManager getDPlusID];
     NSString* domainEncrypt=[WBDNSEncrypt encrypt:domain];
     if (urlPrefix == nil) {
         NSLog(@"ERROR:%s:%d urlPrefix is nil.", __FUNCTION__, __LINE__);

@@ -29,7 +29,7 @@
 + (WBDNSConfig *)sharedConfig;
 
 
-+ (void)setAppID:(NSString *)appID Appkey:(NSString *)appKey;
++ (void)setDPlusID:(NSString *)DPlusID DPlusKey:(NSString *)DPlusKey;
 
 /**
  *  设置配置下发服务器的网址。
@@ -59,14 +59,14 @@
  *
  *  @return App ID
  */
-+ (NSString *)getAppID;
++ (NSString *)getDPlusID;
 
 /**
  *  获取设置的App KEY。
  *
  *  @return App KEY
  */
-+ (NSString *)getAppKey;
++ (NSString *)getDPlusKey;
 
 /**
  *  获取推荐的服务器Url

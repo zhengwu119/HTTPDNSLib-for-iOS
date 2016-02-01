@@ -99,7 +99,7 @@ static char* encodeHex(const char* data, int size, char hexTable[]){
     
     
     
-    NSData *data = [self encryptWithData:[domain dataUsingEncoding:NSUTF8StringEncoding] andKey:[[WBDNSConfigManager getAppKey] dataUsingEncoding:NSUTF8StringEncoding]];
+    NSData *data = [self encryptWithData:[domain dataUsingEncoding:NSUTF8StringEncoding] andKey:[[WBDNSConfigManager getDPlusKey] dataUsingEncoding:NSUTF8StringEncoding]];
     if (data == nil) {
         return nil;
     }
@@ -113,7 +113,7 @@ static char* encodeHex(const char* data, int size, char hexTable[]){
     if (enc == nil) {
         return nil;
     }
-    NSData *data = [self decrpytWithData:enc andKey:[[WBDNSConfigManager getAppKey] dataUsingEncoding:NSUTF8StringEncoding]];
+    NSData *data = [self decrpytWithData:enc andKey:[[WBDNSConfigManager getDPlusKey] dataUsingEncoding:NSUTF8StringEncoding]];
     if (data == nil) {
         return nil;
     }

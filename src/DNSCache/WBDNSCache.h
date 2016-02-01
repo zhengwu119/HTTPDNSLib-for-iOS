@@ -72,7 +72,7 @@
 - (void)initialize;
 
 
-+ (void)setAppID:(NSString *)appID Appkey:(NSString *)appKey;
++ (void)setDPlusID:(NSString *)DPlusID DPlusKey:(NSString *)DPlusKey;
 
 
 /**
