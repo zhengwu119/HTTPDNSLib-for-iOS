@@ -112,7 +112,6 @@ Pod::Spec.new do |s|
     ss.source_files = 'src/DNSCache/HttpDnsManager/**/*.{h,m}'
     end
     s.subspec 'CacheManager' do |ss|
-    ss.library = 'sqlite3'
     ss.source_files = 'src/DNSCache/CacheManager/**/*.{h,m}'
     end
     s.subspec 'Tools' do |ss|
@@ -147,8 +146,8 @@ Pod::Spec.new do |s|
   #
 
   # s.framework  = "libsqlite3"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
-
+    s.frameworks = "SystemConfiguration", "CoreTelephony"
+    s.library = 'sqlite3'
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
 
