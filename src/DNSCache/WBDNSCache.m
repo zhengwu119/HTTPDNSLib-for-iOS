@@ -120,6 +120,15 @@ static NSString* WBDNSLastUploadLogTime = @"WBDNSLastUploadLogTime";
     [WBDNSConfigManager setDPlusID:DPlusID DPlusKey:DPlusKey];
 }
 
+
+-(NSArray *)getExpireDnsCache{
+    
+    NSArray* expiredDomainInfos = [_dnsCacheManager getExpireDnsCache];
+    
+    return expiredDomainInfos;
+}
+
+
 + (void)setConfigServerUrl:(NSString *) url {
     [WBDNSConfigManager setConfigServerUrl:url];
 }

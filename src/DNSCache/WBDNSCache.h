@@ -72,8 +72,16 @@
 - (void)initialize;
 
 
+/**
+ *  设置D+服务的ID和私钥。
+ */
 + (void)setDPlusID:(NSString *)DPlusID DPlusKey:(NSString *)DPlusKey;
 
+
+/**
+ *  读取所有Cache。数组中存放的WBDNSDomainModel对象。
+ */
+-(NSArray *)getExpireDnsCache;
 
 /**
  *  WBDNSCache SDK 需要从配置服务器获取需要的各种配置参数，如dns服务器地址，上传log服务器地址，网址支持白名单等参数。
